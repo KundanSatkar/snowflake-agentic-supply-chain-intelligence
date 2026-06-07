@@ -13,3 +13,5 @@ data/processed/
 
 venv/
 .venv/
+
+vector_store/
