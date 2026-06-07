@@ -60,29 +60,22 @@ Find this section:
 
 ## Architecture
 
-Immediately above it, paste:
+## Platform Preview
 
-Platform Preview
+### Executive Dashboard
+![Dashboard](docs/screenshots/01_dashboard_overview.png)
 
-Executive Dashboard
+### KPI Analytics
+![KPI Analytics](docs/screenshots/02_kpi_metrics.png)
 
-KPI Analytics
+### Snowflake Data Warehouse
+![Snowflake](docs/screenshots/03_snowflake_tables.png)
 
-Snowflake Data Warehouse
+### RAG Policy Retrieval
+![RAG](docs/screenshots/04_rag_policy_retrieval.png)
 
-RAG Policy Retrieval
-
-Multi-Agent Copilot
-
-Save the file:
-
-⌘ + S
-
-Then run:
-
-git status
-
-and paste the output. That’s the next step only.
+### Multi-Agent Copilot
+![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
 ## Architecture
 
 Raw Sales Data
