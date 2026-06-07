@@ -52,9 +52,6 @@ OpsPilot AI provides:
 - Multi-Agent decision framework
 
 ---
-
-## Architecture
-
 ## Platform Preview
 
 ### Executive Dashboard
@@ -71,6 +68,9 @@ OpsPilot AI provides:
 
 ### Multi-Agent Copilot
 ![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
+## Architecture
+
+
 ## Architecture
 
 Raw Sales Data
