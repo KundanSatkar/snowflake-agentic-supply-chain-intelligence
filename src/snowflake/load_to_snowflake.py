@@ -3,9 +3,10 @@ import os
 from pathlib import Path
 import snowflake.connector
 
-load_dotenv()
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(PROJECT_ROOT / ".env")
 
-CSV_PATH = Path("data/processed/clean_candy_sales.csv")
+CSV_PATH = PROJECT_ROOT / "data" / "processed" / "clean_candy_sales.csv"
 STAGE_NAME = "CANDY_SALES_STAGE"
 TABLE_NAME = "RAW_CANDY_SALES"
 
