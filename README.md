@@ -52,11 +52,6 @@ OpsPilot AI provides:
 - Multi-Agent decision framework
 
 ---
-Great. Assuming you’ve renamed the screenshots, the next step only is to add them to the README.
-
-Open README.md.
-
-Find this section:
 
 ## Architecture
 
