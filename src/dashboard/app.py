@@ -174,7 +174,20 @@ fig_trend = px.line(
     markers=True
 )
 col_f.plotly_chart(fig_trend, use_container_width=True)
+st.subheader("Machine Learning Model: Delivery Delay Prediction")
 
+ml_col1, ml_col2, ml_col3, ml_col4 = st.columns(4)
+
+ml_col1.metric("Model Type", "Random Forest")
+ml_col2.metric("Delay Recall", "87.77%")
+ml_col3.metric("F1 Score", "46.24%")
+ml_col4.metric("Use Case", "Early Warning")
+
+st.info(
+    "The delay prediction model is optimized for high recall, meaning it is designed "
+    "to catch as many risky delayed shipments as possible. In operations, missing a "
+    "high-risk shipment is usually more costly than flagging extra orders for review."
+)
 st.markdown("---")
 
 st.subheader("Detailed Sales Data")
