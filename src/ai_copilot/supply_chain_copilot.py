@@ -13,7 +13,7 @@ def load_policy():
     return POLICY_PATH.read_text()
 
 
-def get_kpi_summary(df):
+def get_business_context(df):
     total_revenue = df["SALES"].sum()
     total_profit = df["GROSS_PROFIT"].sum()
     total_orders = df["ORDER_ID"].nunique()
@@ -21,83 +21,93 @@ def get_kpi_summary(df):
     revenue_at_risk = df["REVENUE_AT_RISK"].sum()
     delay_rate = df["IS_DELAYED"].mean() * 100
 
-    return {
-        "total_revenue": total_revenue,
-        "total_profit": total_profit,
-        "total_orders": total_orders,
-        "total_customers": total_customers,
-        "revenue_at_risk": revenue_at_risk,
-        "delay_rate": delay_rate,
-    }
+    top_region = df.groupby("REGION")["SALES"].sum().sort_values(ascending=False)
+    top_products = df.groupby("PRODUCT_NAME")["SALES"].sum().sort_values(ascending=False).head(5)
+    delay_by_region = df.groupby("REGION")["IS_DELAYED"].mean().sort_values(ascending=False) * 100
+    risk_by_region = df.groupby("REGION")["REVENUE_AT_RISK"].sum().sort_values(ascending=False)
+
+    context = f"""
+BUSINESS KPI CONTEXT
+
+Total Revenue: ${total_revenue:,.2f}
+Total Profit: ${total_profit:,.2f}
+Total Orders: {total_orders:,}
+Total Customers: {total_customers:,}
+Revenue at Risk: ${revenue_at_risk:,.2f}
+Overall Delay Rate: {delay_rate:.2f}%
+
+Revenue by Region:
+{top_region.to_string()}
+
+Top Products by Revenue:
+{top_products.to_string()}
+
+Delay Rate by Region:
+{delay_by_region.round(2).to_string()}
+
+Revenue at Risk by Region:
+{risk_by_region.to_string()}
+"""
+    return context
 
 
-def answer_question(question, df, policy_text):
+def get_relevant_policy(question, policy_text):
     question_lower = question.lower()
 
-    if "revenue" in question_lower and "region" in question_lower:
-        result = (
-            df.groupby("REGION")["SALES"]
-            .sum()
-            .sort_values(ascending=False)
-        )
-        return f"Revenue by region:\n{result}"
+    sections = policy_text.split("##")
+    relevant_sections = []
 
-    if "profit" in question_lower and "division" in question_lower:
-        result = (
-            df.groupby("DIVISION")["GROSS_PROFIT"]
-            .sum()
-            .sort_values(ascending=False)
-        )
-        return f"Profit by division:\n{result}"
+    for section in sections:
+        section_lower = section.lower()
 
-    if "product" in question_lower:
-        result = (
-            df.groupby("PRODUCT_NAME")["SALES"]
-            .sum()
-            .sort_values(ascending=False)
-            .head(10)
-        )
-        return f"Top products by revenue:\n{result}"
+        if "delay" in question_lower and "delivery" in section_lower:
+            relevant_sections.append(section)
 
-    if "delay" in question_lower or "delayed" in question_lower:
-        result = (
-            df.groupby("REGION")["IS_DELAYED"]
-            .mean()
-            .sort_values(ascending=False) * 100
-        )
-        return f"Delay rate by region:\n{result.round(2)}%"
+        if "risk" in question_lower and "revenue" in section_lower:
+            relevant_sections.append(section)
 
-    if "risk" in question_lower:
-        result = (
-            df.groupby("REGION")["REVENUE_AT_RISK"]
-            .sum()
-            .sort_values(ascending=False)
-        )
-        return f"Revenue at risk by region:\n{result}"
+        if "region" in question_lower and "regional" in section_lower:
+            relevant_sections.append(section)
 
-    if "policy" in question_lower or "escalation" in question_lower:
-        return f"Relevant policy context:\n\n{policy_text}"
+        if "product" in question_lower and "product" in section_lower:
+            relevant_sections.append(section)
 
-    summary = get_kpi_summary(df)
+        if "escalation" in question_lower and "escalation" in section_lower:
+            relevant_sections.append(section)
 
-    return f"""
-OpsPilot AI Summary:
+    if not relevant_sections:
+        return policy_text
 
-Total Revenue: ${summary["total_revenue"]:,.2f}
-Total Profit: ${summary["total_profit"]:,.2f}
-Total Orders: {summary["total_orders"]:,}
-Total Customers: {summary["total_customers"]:,}
-Revenue at Risk: ${summary["revenue_at_risk"]:,.2f}
-Delay Rate: {summary["delay_rate"]:.2f}%
+    return "\n\n".join(relevant_sections)
 
-Recommendation:
-Review high-risk regions and delayed shipments first, then prioritize products with high revenue impact.
+
+def generate_executive_answer(question, business_context, policy_context):
+    answer = f"""
+QUESTION:
+{question}
+
+DATA-DRIVEN ANSWER:
+Based on the current supply chain analytics data, the system reviewed revenue, profit, delay risk, product performance, and revenue-at-risk metrics.
+
+BUSINESS CONTEXT USED:
+{business_context}
+
+POLICY CONTEXT USED:
+{policy_context}
+
+EXECUTIVE RECOMMENDATION:
+1. Prioritize regions and products with high revenue exposure.
+2. Review delayed shipments because they directly contribute to revenue at risk.
+3. Escalate high-value delayed orders to operations leadership.
+4. Continue monitoring product and regional trends through the dashboard.
 """
+    return answer
 
 
 def main():
     df = load_data()
     policy_text = load_policy()
+    business_context = get_business_context(df)
 
     print("\nOpsPilot AI Supply Chain Copilot")
     print("Type 'exit' to quit.")
@@ -109,7 +119,13 @@ def main():
             print("Goodbye.")
             break
 
-        answer = answer_question(question, df, policy_text)
+        policy_context = get_relevant_policy(question, policy_text)
+        answer = generate_executive_answer(
+            question,
+            business_context,
+            policy_context
+        )
+
         print("\nAnswer:")
         print(answer)
 
