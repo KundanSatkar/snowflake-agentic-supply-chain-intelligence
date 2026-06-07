@@ -1,142 +1,176 @@
-# OpsPilot AI — Snowflake Agentic Supply Chain Intelligence Platform
+# 🚀 OpsPilot AI
 
-## Overview
+## AI-Powered Supply Chain Intelligence Platform
 
-OpsPilot AI is an end-to-end enterprise data and AI platform designed to help logistics and operations teams predict delivery delays, detect revenue risk, monitor data quality, and generate AI-powered business recommendations.
+OpsPilot AI is an end-to-end Supply Chain Intelligence Platform designed to help operations leaders identify delivery risks, quantify revenue exposure, and make faster data-driven decisions.
 
-The project combines Snowflake data warehousing, ETL pipelines, dbt transformations, machine learning, RAG, and Agentic AI to simulate a real-world operations intelligence platform.
+The platform combines Data Engineering, Business Intelligence, Machine Learning, Retrieval-Augmented Generation (RAG), and Multi-Agent AI into a unified decision-support system.
 
 ---
 
 ## Business Problem
 
-Modern logistics teams often struggle to identify delivery delays, SLA risks, revenue leakage, and operational bottlenecks because shipment data, operational metrics, and business policies are spread across multiple systems.
+Operations teams often struggle to answer critical business questions:
 
-OpsPilot AI solves this problem by creating a unified intelligence platform that helps answer:
+- Which delayed shipments are putting revenue at risk?
+- Which regions are underperforming?
+- What operational bottlenecks require immediate attention?
+- Are teams following supply chain policies?
+- What actions should leadership prioritize?
 
-* Which shipments are likely to be delayed?
-* Which carriers are causing the most operational risk?
-* How much revenue is at risk?
-* Which policy applies to a given scenario?
-* What action should the operations team take next?
+The information required to answer these questions is often scattered across spreadsheets, reports, dashboards, and policy documents.
+
+OpsPilot AI centralizes operational intelligence into a single platform.
 
 ---
 
-## Planned Architecture
+## Solution
 
-Raw Data Sources
+OpsPilot AI provides:
 
-↓
+### Data Intelligence Layer
+- Automated ETL pipeline
+- Data quality validation
+- Feature engineering
+- Snowflake data warehouse
 
-ETL Pipeline
+### Analytics Layer
+- Executive KPI dashboard
+- Revenue monitoring
+- Profitability analysis
+- Customer and order analytics
 
-↓
+### Predictive Intelligence Layer
+- Delay prediction model
+- Revenue-at-risk analysis
+- Shipment risk monitoring
+
+### AI Intelligence Layer
+- Context-aware business copilot
+- Policy-aware retrieval using ChromaDB
+- Retrieval-Augmented Generation (RAG)
+- Multi-Agent decision framework
+
+---
+Great. Assuming you’ve renamed the screenshots, the next step only is to add them to the README.
+
+Open README.md.
+
+Find this section:
+
+## Architecture
+
+Immediately above it, paste:
+
+Platform Preview
+
+Executive Dashboard
+
+KPI Analytics
 
 Snowflake Data Warehouse
 
-↓
+RAG Policy Retrieval
 
-dbt Transformations
+Multi-Agent Copilot
 
-↓
+Save the file:
 
-Analytics Marts
+⌘ + S
 
-↓
+Then run:
 
-ML Feature Store
+git status
 
-↓
+and paste the output. That’s the next step only.
+## Architecture
 
-Delay Prediction Models
+Raw Sales Data
 
-↓
+↓ ETL Pipeline
 
-RAG Knowledge Base
+↓ Data Cleaning & Feature Engineering
 
-↓
+↓ Snowflake Data Warehouse
 
-Agentic AI Layer
+↓ Executive Analytics Dashboard
 
-↓
+↓ Machine Learning Risk Models
 
-Streamlit Dashboard
+↓ Vector Search & Policy Retrieval
+
+↓ Multi-Agent AI Copilot
+
+↓ Executive Recommendations
 
 ---
 
-## Tech Stack
+## Key Features
 
-### Data Engineering
-
-* Snowflake
-* SQL
-* Python
-* dbt
-* Airflow
+### Executive Dashboard
+- Revenue tracking
+- Profit monitoring
+- Customer analytics
+- Regional performance analysis
 
 ### Machine Learning
+- Shipment delay prediction
+- Revenue risk analysis
+- Operational performance monitoring
 
-* Scikit-learn
-* XGBoost
+### RAG System
+- Policy document retrieval
+- Semantic search
+- Context-aware recommendations
 
-### GenAI
-
-* RAG
-* LangGraph
-* OpenAI
-
-### Visualization
-
-* Streamlit
-* Plotly
-
-### Data Quality
-
-* Great Expectations
+### Multi-Agent AI
+- KPI Agent
+- Risk Agent
+- Policy Agent
+- Recommendation Agent
 
 ---
 
-## Project Status
+## Technology Stack
 
-**Current Phase:**
-Project Setup & Architecture Design
+### Data Engineering
+- Python
+- Pandas
+- Snowflake
 
-**Next Phase:**
-Dataset Selection & Data Understanding
+### Analytics
+- Streamlit
+- Plotly
+
+### Machine Learning
+- Scikit-learn
+- Random Forest
+
+### AI & RAG
+- ChromaDB
+- Sentence Transformers
+- Multi-Agent Architecture
 
 ---
 
-## Target Outcome
+## Business Impact
 
-Build an enterprise-grade AI-powered operations intelligence platform capable of:
+OpsPilot AI helps organizations:
 
-* Predicting delivery delays
-* Detecting revenue leakage
-* Monitoring data quality
-* Answering policy and SOP questions using RAG
-* Generating executive-ready operational recommendations using Agentic AI
+- Detect operational bottlenecks earlier
+- Quantify revenue exposure
+- Prioritize high-risk shipments
+- Improve decision-making speed
+- Centralize business intelligence
+- Reduce manual operational analysis
 
 ---
 
-## Repository Structure
+## Project Highlights
 
-```text
-snowflake-agentic-supply-chain-intelligence/
-
-├── data/
-├── notebooks/
-├── src/
-│   ├── etl/
-│   ├── ml/
-│   ├── rag/
-│   ├── agents/
-│   └── dashboard/
-├── snowflake/
-├── dbt/
-├── docs/
-├── tests/
-├── images/
-├── README.md
-├── requirements.txt
-└── .env.example
-```
+- Built end-to-end analytics architecture
+- Designed Snowflake data warehouse
+- Developed machine learning risk models
+- Implemented RAG-based policy retrieval
+- Created multi-agent AI decision framework
+- Delivered executive-ready business intelligence dashboards
