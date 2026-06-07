@@ -1,0 +1,27 @@
+-- =====================================================
+-- OpsPilot AI: AI Feature Tables
+-- ML-ready and AI-ready features for prediction models
+-- =====================================================
+
+USE DATABASE OPSPILOT_AI;
+USE SCHEMA AI_FEATURES;
+
+CREATE OR REPLACE TABLE DELIVERY_RISK_FEATURES (
+    FEATURE_KEY INTEGER AUTOINCREMENT,
+    ORDER_ID STRING,
+    ORDER_DATE DATE,
+    CORRECTED_SHIP_DATE DATE,
+    SHIP_MODE STRING,
+    CUSTOMER_ID INTEGER,
+    PRODUCT_ID STRING,
+    DIVISION STRING,
+    REGION STRING,
+    SALES FLOAT,
+    UNITS INTEGER,
+    GROSS_PROFIT FLOAT,
+    COST FLOAT,
+    SHIPPING_DAYS INTEGER,
+    PROFIT_MARGIN FLOAT,
+    IS_DELAYED INTEGER,
+    REVENUE_AT_RISK FLOAT
+);
