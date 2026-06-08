@@ -200,4 +200,4 @@ OpsPilot AI demonstrates how modern data engineering, analytics, machine learnin
 
 The project showcases the complete lifecycle of a data product—from data ingestion and warehousing to predictive analytics, semantic retrieval, AI orchestration, and executive decision support—reflecting real-world challenges faced by supply chain and operations teams.
 
-Built with the mindset of solving business problems, not just building models.
+## Built with the mindset of solving business problems, not just building models.
