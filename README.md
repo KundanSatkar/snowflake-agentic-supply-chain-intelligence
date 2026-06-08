@@ -1,4 +1,10 @@
-# 🚀 OpsPilot AI
+#  OpsPilot AI
+
+## 🌐 Live Demo
+[![Open App](https://img.shields.io/badge/Launch-Live%20Demo-success?style=for-the-badge)](https://opspilot-supply-chain-ai.streamlit.app/)
+**Application:** https://opspilot-supply-chain-ai.streamlit.app/
+
+Experience the deployed Supply Chain Intelligence Platform featuring executive analytics dashboards, machine learning–driven delay prediction, policy-aware retrieval, and multi-agent decision intelligence.
 
 ## AI-Powered Supply Chain Intelligence Platform
 
