@@ -170,14 +170,17 @@ O --> R[AI-Assisted Operational Decisions]
 
 ## Business Impact
 
-OpsPilot AI helps organizations:
+OpsPilot AI addresses a critical operational challenge: supply chain intelligence is often fragmented across spreadsheets, reports, dashboards, and policy documents, making it difficult for leaders to identify risks and act quickly.
 
-- Detect operational bottlenecks earlier
-- Quantify revenue exposure
-- Prioritize high-risk shipments
-- Improve decision-making speed
-- Centralize business intelligence
-- Reduce manual operational analysis
+The platform consolidates operational analytics, predictive intelligence, and business policies into a unified decision-support system that enables:
+
+* Early identification of delayed shipments and operational bottlenecks
+* Quantification of revenue-at-risk associated with delivery disruptions
+* Proactive prioritization of high-risk customer orders
+* Faster operational escalation through policy-aware recommendations
+* Improved decision-making using analytics, machine learning, and AI-assisted insights
+
+By combining Snowflake, machine learning, retrieval-augmented generation (RAG), and multi-agent AI, OpsPilot AI transforms raw operational data into actionable business intelligence.
 
 ---
 
@@ -189,3 +192,12 @@ OpsPilot AI helps organizations:
 - Implemented RAG-based policy retrieval
 - Created multi-agent AI decision framework
 - Delivered executive-ready business intelligence dashboards
+
+## Conclusion
+
+
+OpsPilot AI demonstrates how modern data engineering, analytics, machine learning, retrieval-augmented generation (RAG), and agentic AI can be integrated into a single operational intelligence platform.
+
+The project showcases the complete lifecycle of a data product—from data ingestion and warehousing to predictive analytics, semantic retrieval, AI orchestration, and executive decision support—reflecting real-world challenges faced by supply chain and operations teams.
+
+Built with the mindset of solving business problems, not just building models.
