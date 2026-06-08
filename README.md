@@ -63,11 +63,10 @@ OpsPilot AI provides:
 ## Architecture
 
 ```mermaid
-flowchart TD
+flowchart TB
 
 A[Raw Supply Chain Data]
-
-A --> B[Python ETL Pipeline]
+--> B[Python ETL Pipeline]
 
 B --> C[Data Quality Validation]
 B --> D[Feature Engineering]
@@ -82,24 +81,27 @@ E --> H[Policy Knowledge Base]
 H --> I[ChromaDB Vector Store]
 I --> J[RAG Retrieval Engine]
 
-F --> K[Multi-Agent AI Copilot]
-G --> K
-J --> K
+subgraph Multi-Agent AI Copilot
+    K[KPI Agent]
+    L[Risk Agent]
+    M[Policy Agent]
+    N[Recommendation Agent]
+end
 
-K --> L[KPI Agent]
-K --> M[Risk Agent]
-K --> N[Policy Agent]
-K --> O[Recommendation Agent]
+F --> K
+G --> L
+J --> M
 
-L --> P[Executive Decision Support]
-M --> P
-N --> P
-O --> P
+K --> O[Executive Decision Support]
+L --> O
+M --> O
+N --> O
 
-P --> Q[Reduced Revenue Risk]
-P --> R[Improved Delivery Performance]
-P --> S[AI-Assisted Operational Decisions]
+O --> P[Reduced Revenue Risk]
+O --> Q[Improved Delivery Performance]
+O --> R[AI-Assisted Operational Decisions]
 ```
+
 ## Platform Preview
 
 ### Executive Dashboard
