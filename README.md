@@ -76,26 +76,29 @@ OpsPilot AI provides:
 ![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
 ## Architecture
 
+flowchart TD
 
-## Architecture
-
-Raw Sales Data
-
-↓ ETL Pipeline
-
-↓ Data Cleaning & Feature Engineering
-
-↓ Snowflake Data Warehouse
-
-↓ Executive Analytics Dashboard
-
-↓ Machine Learning Risk Models
-
-↓ Vector Search & Policy Retrieval
-
-↓ Multi-Agent AI Copilot
-
-↓ Executive Recommendations
+                Raw Data
+                     │
+                ETL Pipeline
+                /         \
+       Data Quality    Feature Eng.
+                \         /
+                 Snowflake
+          /         |         \
+ Dashboard     ML Engine    Policies
+                    |           |
+                    |       ChromaDB
+                    |           |
+                    └──── RAG ──┘
+                           |
+                  Multi-Agent AI
+                /    |    |    \
+             KPI  Risk Policy Reco
+                    |
+          Executive Decisions
+            /      |       \
+      Revenue  Efficiency  Speed
 
 ---
 
