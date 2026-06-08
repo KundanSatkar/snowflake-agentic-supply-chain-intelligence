@@ -78,27 +78,40 @@ OpsPilot AI provides:
 
 flowchart TD
 
-                Raw Data
-                     │
-                ETL Pipeline
-                /         \
-       Data Quality    Feature Eng.
-                \         /
-                 Snowflake
-          /         |         \
- Dashboard     ML Engine    Policies
-                    |           |
-                    |       ChromaDB
-                    |           |
-                    └──── RAG ──┘
-                           |
-                  Multi-Agent AI
-                /    |    |    \
-             KPI  Risk Policy Reco
-                    |
-          Executive Decisions
-            /      |       \
-      Revenue  Efficiency  Speed
+A[Raw Supply Chain Data]
+
+A --> B[Python ETL Pipeline]
+
+B --> C[Data Quality Validation]
+B --> D[Feature Engineering]
+
+C --> E[Snowflake Data Warehouse]
+D --> E
+
+E --> F[Executive Analytics Dashboard]
+E --> G[Machine Learning Risk Engine]
+E --> H[Policy Knowledge Base]
+
+H --> I[ChromaDB Vector Store]
+I --> J[RAG Retrieval Engine]
+
+F --> K[Multi-Agent AI Copilot]
+G --> K
+J --> K
+
+K --> L[KPI Agent]
+K --> M[Risk Agent]
+K --> N[Policy Agent]
+K --> O[Recommendation Agent]
+
+L --> P[Executive Decision Support]
+M --> P
+N --> P
+O --> P
+
+P --> Q[Revenue Protection]
+P --> R[Operational Efficiency]
+P --> S[Faster Business Decisions]
 
 ---
 
