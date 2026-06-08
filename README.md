@@ -58,23 +58,7 @@ OpsPilot AI provides:
 - Multi-Agent decision framework
 
 ---
-## Platform Preview
 
-### Executive Dashboard
-![Dashboard](docs/screenshots/01_dashboard_overview.png)
-
-### KPI Analytics
-![KPI Analytics](docs/screenshots/02_kpi_metrics.png)
-
-### Snowflake Data Warehouse
-![Snowflake](docs/screenshots/03_snowflake_tables.png)
-
-### RAG Policy Retrieval
-![RAG](docs/screenshots/04_rag_policy_retrieval.png)
-
-### Multi-Agent Copilot
-![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
-## Architecture
 
 ## Architecture
 
@@ -116,7 +100,22 @@ P --> Q[Reduced Revenue Risk]
 P --> R[Improved Delivery Performance]
 P --> S[AI-Assisted Operational Decisions]
 ```
+## Platform Preview
 
+### Executive Dashboard
+![Dashboard](docs/screenshots/01_dashboard_overview.png)
+
+### KPI Analytics
+![KPI Analytics](docs/screenshots/02_kpi_metrics.png)
+
+### Snowflake Data Warehouse
+![Snowflake](docs/screenshots/03_snowflake_tables.png)
+
+### RAG Policy Retrieval
+![RAG](docs/screenshots/04_rag_policy_retrieval.png)
+
+### Multi-Agent Copilot
+![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
 ---
 
 ## Key Features
