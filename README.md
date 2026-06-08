@@ -76,6 +76,9 @@ OpsPilot AI provides:
 ![Multi-Agent](docs/screenshots/05_multi_agent_copilot.png)
 ## Architecture
 
+## Architecture
+
+```mermaid
 flowchart TD
 
 A[Raw Supply Chain Data]
@@ -109,9 +112,10 @@ M --> P
 N --> P
 O --> P
 
-P --> Q[Revenue Protection]
-P --> R[Operational Efficiency]
-P --> S[Faster Business Decisions]
+P --> Q[Reduced Revenue Risk]
+P --> R[Improved Delivery Performance]
+P --> S[AI-Assisted Operational Decisions]
+```
 
 ---
 
